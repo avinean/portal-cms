@@ -861,13 +861,25 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+    level: Attribute.Enumeration<['a1', 'a2', 'b1', 'b2', 'c1', 'c2']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    level: Attribute.Enumeration<['a1', 'a2', 'b1', 'b2', 'c1', 'c2']> &
+    poster: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    gallery: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::product.product', 'title'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
